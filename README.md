@@ -1,4 +1,4 @@
-<center>Adotaja 2.0 POO</center>
+<div align="center">Adotaja 2.0 POO</div>
 <br/>
 
 Este documento tem como objetivo apresentar uma descrição detalhada dos requisitos do sistema AdotaJá, que tem como principal função juntar pessoas que querem doar/ONGs que precisam ter mais visibilidade, com pessoas que desejam ajudar esses animais dando um abrigo, comida e principalmente amor.
