@@ -1,7 +1,4 @@
 export interface Address {
-  uf: string;
-  city: string;
-
   getUF(): string;
   getCity(): string;
 
