@@ -1,7 +1,12 @@
+import { filterStrategy } from "../Types/FilterStrategy";
+import { Pets } from "./Pets";
+
 export interface User {
-  name: string;
-  birthDate: Date;
-  phone: string;
-  email: string;
-  password: string;
+  addPet(pet: Pets): void;
+  getPets(name: string): Array<Pets> | null;
+  removePet(name: string): void;
+  filterPet(strategy: filterStrategy): Array<Pets> | null;
+  login(): void;
+  logout(): void;
+  isLogin(): boolean;
 }
