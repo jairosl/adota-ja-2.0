@@ -21,30 +21,38 @@ export class UserController implements User {
   ) {}
 
   addPet(pet: Pets): void {
-    
+    if (!this.isLogin()) return
+
+    this.pets.push(pet)
   }
 
-  getPets(name: string): Pets[] | null {
-    return []
+  getPets(): Pets[] | null {
+    if (this.pets.length === 0) return null
+    return this.pets
   }
 
   removePet(name: string): void {
-    
+    const removedPet = this.pets.filter(pet => pet.getName() !== name)
+    this.pets = removedPet
   }
 
   filterPet(strategy: filterStrategy): Pets[] | null {
-    return []
+    const result = strategy.executeFilter(this.pets)
+    return result
   }
 
   login(): void {
-    
+    const session = this.session.createSession(this.email, this.password)
+
+    this.token = session.token
   }
 
   logout(): void {
-    
+    this.session.removeSession(this.token)
+    this.token = ''
   }
 
   isLogin(): boolean {
-    return true
+    return this.session.isValidToken(this.token, this.email)
   }
 }

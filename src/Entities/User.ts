@@ -3,7 +3,7 @@ import { Pets } from "./Pets";
 
 export interface User {
   addPet(pet: Pets): void;
-  getPets(name: string): Array<Pets> | null;
+  getPets(): Array<Pets> | null;
   removePet(name: string): void;
   filterPet(strategy: filterStrategy): Array<Pets> | null;
   login(): void;
